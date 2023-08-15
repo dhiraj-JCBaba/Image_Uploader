@@ -1,0 +1,52 @@
+from django.db import models
+
+class MyModel(models.Model):
+    # CharField
+    char_field = models.CharField(max_length=100)
+
+    # IntegerField
+    int_field = models.IntegerField()
+
+    # FloatField
+    float_field = models.FloatField()
+
+    # BooleanField
+    bool_field = models.BooleanField(default=False)
+
+    # DateField
+    date_field = models.DateField()
+
+    # TimeField
+    time_field = models.TimeField()
+
+    # DateTimeField
+    datetime_field = models.DateTimeField()
+
+    # EmailField
+    email_field = models.EmailField()
+
+    # URLField
+    url_field = models.URLField()
+
+    # FileField
+    file_field = models.FileField(upload_to='uploads/')
+
+    # ImageField
+    image_field = models.ImageField(upload_to='images/')
+
+    # DecimalField
+    decimal_field = models.DecimalField(max_digits=10, decimal_places=2)
+
+    # ForeignKey
+    foreign_key_field = models.ForeignKey('AnotherModel', on_delete=models.CASCADE)
+
+    # ManyToManyField
+    many_to_many_field = models.ManyToManyField('YetAnotherModel')
+
+class AnotherModel(models.Model):
+    # Fields for AnotherModel
+    pass
+
+class YetAnotherModel(models.Model):
+    # Fields for YetAnotherModel
+    pass
